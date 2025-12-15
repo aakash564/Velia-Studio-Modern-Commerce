@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Velia Studio — Modern Commerce</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "gsap": "https://esm.sh/gsap@3.12.5",
+        "gsap/ScrollTrigger": "https://esm.sh/gsap@3.12.5/ScrollTrigger"
+      }
+    }
+  </script>
+</head>
+<body>
+  <header class="nav" data-sticky-nav>
+    <div class="nav__inner">
+      <div class="nav__brand">
+        <span class="nav__logo-dot"></span>
+        <span class="nav__logo-text">Velia</span>
+      </div>
+      <nav class="nav__links">
+        <button class="nav__link" data-scroll-to="#collections">Collections</button>
+        <button class="nav__link" data-scroll-to="#editors-picks">Editor’s Picks</button>
+        <button class="nav__link" data-scroll-to="#story">Story</button>
+      </nav>
+      <div class="nav__actions">
+        <button class="nav__icon-btn" aria-label="Search">
+          <span class="nav__icon nav__icon--search"></span>
+        </button>
+        <button class="nav__icon-btn" aria-label="Wishlist">
+          <span class="nav__icon nav__icon--heart"></span>
+        </button>
+        <button class="nav__cart-btn" data-toggle-cart>
+          <span class="nav__icon nav__icon--bag"></span>
+          <span class="nav__cart-count" data-cart-count>0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero__bg-layer hero__bg-layer--image" data-parallax></div>
+      <div class="hero__bg-layer hero__bg-layer--glow"></div>
+      <div class="hero__inner">
+        <div class="hero__content">
+          <p class="hero__eyebrow">New Season · AW 24/25</p>
+          <h1 class="hero__title">
+            Design‑first essentials<br />
+            for everyday motion.
+          </h1>
+          <p class="hero__subtitle">
+            Explore interactive-ready pieces with responsive details,
+            premium materials, and a seamless buying experience.
+          </p>
+          <div class="hero__cta-row">
+            <button class="btn btn--primary" data-scroll-to="#collections">
+              Shop the drop
+            </button>
+            <button class="btn btn--ghost" data-scroll-to="#editors-picks">
+              View editor’s picks
+            </button>
+          </div>
+          <div class="hero__meta">
+            <span>Free global shipping</span>
+            <span>·</span>
+            <span>45‑day returns</span>
+            <span>·</span>
+            <span>Carbon‑offset delivery</span>
+          </div>
+        </div>
+
+        <div class="hero__carousel">
+          <div class="hero-carousel" data-hero-carousel>
+            <div class="hero-carousel__track" data-hero-track>
+              <!-- removed static hero carousel cards: now generated from product config in script.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLLECTIONS / CATEGORIES -->
+    <section class="section section--collections" id="collections">
+      <div class="section__header" data-animate-in>
+        <h2>Collections in Motion</h2>
+        <p>Curated sets built around movement, tactility, and layered comfort.</p>
+      </div>
+      <div class="collections" data-animate-stagger>
+        <article class="collection-card">
+          <div class="collection-card__media">
+            <img src="https://images.pexels.com/photos/7671177/pexels-photo-7671177.jpeg?auto=compress&cs=tinysrgb&w=800"
+                 alt="Outerwear collection" />
+          </div>
+          <div class="collection-card__body">
+            <h3>Outerwear Studio</h3>
+            <p>Heat‑mapped insulation and articulated silhouettes for urban climates.</p>
+            <button class="link-btn">Explore outerwear</button>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <div class="collection-card__media">
+            <img src="https://images.pexels.com/photos/3738086/pexels-photo-3738086.jpeg?auto=compress&cs=tinysrgb&w=800"
+                 alt="Footwear collection" />
+          </div>
+          <div class="collection-card__body">
+            <h3>Momentum Footwear</h3>
+            <p>Low‑profile sneakers with responsive cushioning and breathable uppers.</p>
+            <button class="link-btn">Explore footwear</button>
+          </div>
+        </article>
+
+        <article class="collection-card">
+          <div class="collection-card__media">
+            <img src="https://images.pexels.com/photos/7671169/pexels-photo-7671169.jpeg?auto=compress&cs=tinysrgb&w=800"
+                 alt="Accessories collection" />
+          </div>
+          <div class="collection-card__body">
+            <h3>Carry & Accessories</h3>
+            <p>Technical packs, modular totes, and precision‑molded organizers.</p>
+            <button class="link-btn">Explore accessories</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRODUCT GRID (EDITOR'S PICKS) -->
+    <section class="section section--products" id="editors-picks">
+      <div class="section__header" data-animate-in>
+        <h2>Editor’s Picks</h2>
+        <p>High‑impact pieces with subtle interactive detailing.</p>
+      </div>
+
+      <div class="products-grid" data-animate-stagger data-products-grid>
+        <!-- removed static product-card markup: now generated from product config in script.js -->
+      </div>
+    </section>
+
+    <!-- PRODUCT STORY / DETAIL EXPERIENCE -->
+    <section class="section section--story" id="story">
+      <div class="story" data-animate-in>
+        <div class="story__visual" data-zoom-on-hover>
+          <img src="https://images.pexels.com/photos/7671173/pexels-photo-7671173.jpeg?auto=compress&cs=tinysrgb&w=1200"
+               alt="Close up product detail" />
+          <div class="story__badge">Detail view</div>
+        </div>
+        <div class="story__content">
+          <h2>Product pages built around touch.</h2>
+          <p>
+            Fluid transitions between colorways, tactile zoom states, and responsive size selectors make it easy
+            to configure the perfect fit. Every interaction is animated with soft easing curves to feel natural
+            and intuitive.
+          </p>
+          <ul class="story__list">
+            <li>Pinch‑ready zoom and swipe galleries on mobile.</li>
+            <li>Animated size and color selectors with live previews.</li>
+            <li>Micro‑interactions for cart, wishlist, and comparison actions.</li>
+          </ul>
+          <div class="story__pills">
+            <span class="pill">Real‑time variant transitions</span>
+            <span class="pill">Gesture‑driven zoom</span>
+            <span class="pill">Accessible micro‑interactions</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHECKOUT PREVIEW -->
+    <section class="section section--checkout">
+      <div class="section__header" data-animate-in>
+        <h2>Checkout that feels invisible.</h2>
+        <p>Clear progress, inline validation, and a focused layout keep the moment of purchase distraction‑free.</p>
+      </div>
+
+      <div class="checkout-preview" data-animate-in>
+        <div class="checkout-preview__steps">
+          <div class="stepper">
+            <div class="stepper__track">
+              <div class="stepper__fill" data-stepper-fill></div>
+            </div>
+            <div class="stepper__dots">
+              <span class="dot dot--active" data-step-dot="1"></span>
+              <span class="dot" data-step-dot="2"></span>
+              <span class="dot" data-step-dot="3"></span>
+            </div>
+            <div class="stepper__labels">
+              <span>Shipping</span>
+              <span>Payment</span>
+              <span>Review</span>
+            </div>
+          </div>
+          <div class="checkout-preview__form" data-checkout-steps>
+            <div class="checkout-step checkout-step--active" data-step="1">
+              <div class="field">
+                <label>Full name</label>
+                <input type="text" placeholder="Alex Doe" />
+              </div>
+              <div class="field field--split">
+                <div>
+                  <label>Country</label>
+                  <select>
+                    <option>United States</option>
+                    <option>Germany</option>
+                    <option>Japan</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Postal code</label>
+                  <input type="text" placeholder="00000" />
+                </div>
+              </div>
+            </div>
+            <div class="checkout-step" data-step="2">
+              <div class="field">
+                <label>Card number</label>
+                <input type="text" placeholder="•••• •••• •••• ••••" />
+              </div>
+              <div class="field field--split">
+                <div>
+                  <label>Expiry</label>
+                  <input type="text" placeholder="MM/YY" />
+                </div>
+                <div>
+                  <label>CVC</label>
+                  <input type="password" placeholder="•••" />
+                </div>
+              </div>
+            </div>
+            <div class="checkout-step" data-step="3">
+              <p class="checkout-preview__summary">
+                3 items · Estimated arrival: <strong>3–5 business days</strong>
+              </p>
+              <p class="checkout-preview__summary">
+                All duties and taxes are included in the final price.
+              </p>
+            </div>
+          </div>
+          <div class="checkout-preview__controls">
+            <button class="btn btn--ghost" data-prev-step disabled>Back</button>
+            <button class="btn btn--primary" data-next-step>Continue</button>
+          </div>
+        </div>
+
+        <div class="checkout-preview__cart">
+          <h3>Cart</h3>
+          <div class="checkout-preview__items">
+            <div class="mini-item">
+              <div class="mini-item__thumb">
+                <img src="https://images.pexels.com/photos/7671166/pexels-photo-7671166.jpeg?auto=compress&cs=tinysrgb&w=200"
+                     alt="Motion Shell Jacket" />
+              </div>
+              <div class="mini-item__body">
+                <p>Motion Shell Jacket</p>
+                <span class="muted">Charcoal · M</span>
+              </div>
+              <span class="mini-item__price">$320</span>
+            </div>
+            <div class="mini-item">
+              <div class="mini-item__thumb">
+                <img src="https://images.pexels.com/photos/3738088/pexels-photo-3738088.jpeg?auto=compress&cs=tinysrgb&w=200"
+                     alt="Linear Leather Sneaker" />
+              </div>
+              <div class="mini-item__body">
+                <p>Linear Leather Sneaker</p>
+                <span class="muted">White · 42</span>
+              </div>
+              <span class="mini-item__price">$190</span>
+            </div>
+          </div>
+          <div class="checkout-preview__totals">
+            <div class="row">
+              <span>Subtotal</span>
+              <span>$510</span>
+            </div>
+            <div class="row">
+              <span>Shipping</span>
+              <span>Free</span>
+            </div>
+            <div class="row row--strong">
+              <span>Total</span>
+              <span>$510</span>
+            </div>
+          </div>
+          <button class="btn btn--secondary btn--full">Review order</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- QUICK VIEW MODAL -->
+  <div class="modal" data-modal>
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog" data-modal-dialog>
+      <button class="modal__close" aria-label="Close" data-close-modal>×</button>
+      <div class="modal__content">
+        <div class="modal__media-area">
+          <div class="modal__media-main" data-modal-main-media>
+            <!-- Injected via JS -->
+          </div>
+          <div class="modal__media-thumbs" data-modal-thumbs></div>
+        </div>
+        <div class="modal__details" data-modal-details>
+          <!-- Injected via JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CART DRAWER -->
+  <aside class="cart-drawer" data-cart-drawer>
+    <div class="cart-drawer__header">
+      <h3>Your cart</h3>
+      <button class="cart-drawer__close" data-toggle-cart>×</button>
+    </div>
+    <div class="cart-drawer__body">
+      <div class="cart-drawer__items" data-cart-items>
+        <p class="muted" data-cart-empty>Your cart is empty. Start with an editor’s pick.</p>
+      </div>
+    </div>
+    <div class="cart-drawer__footer">
+      <div class="cart-drawer__summary">
+        <span>Subtotal</span>
+        <span data-cart-subtotal>$0</span>
+      </div>
+      <button class="btn btn--primary btn--full">Checkout</button>
+    </div>
+  </aside>
+
+  <script type="module" src="./script.js"></script>
+</body>
+</html>
+
